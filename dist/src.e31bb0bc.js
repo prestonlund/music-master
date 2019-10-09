@@ -32097,7 +32097,7 @@ var Artist = function Artist(_ref) {
       name = artist.name,
       followers = artist.followers,
       genres = artist.genres;
-  return _react.default.createElement("div", null, _react.default.createElement("h3", null, name), _react.default.createElement("p", null, followers.total, " followers"), _react.default.createElement("p", null, genres.join(",")), _react.default.createElement("img", {
+  return _react.default.createElement("div", null, _react.default.createElement("h3", null, name), _react.default.createElement("p", null, followers.total, " followers"), _react.default.createElement("p", null, genres.join(", ")), _react.default.createElement("img", {
     src: images[0] && images[0].url,
     alt: "artist profile",
     style: {
@@ -32216,11 +32216,15 @@ function (_Component) {
             preview_url = track.preview_url;
         return _react.default.createElement("div", {
           key: id,
-          onClick: _this2.playAudio(preview_url)
+          onClick: _this2.playAudio(preview_url),
+          className: "track"
         }, _react.default.createElement("img", {
           src: album.images[0].url,
-          alt: "track-image"
-        }), _react.default.createElement("p", null, name));
+          alt: "track-image",
+          className: "track-image"
+        }), _react.default.createElement("p", {
+          className: "track-text"
+        }, name));
       }));
     }
   }]);
@@ -32328,6 +32332,11 @@ function (_Component) {
   }
 
   _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.searchArtist("arcade fire");
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Music Master"), _react.default.createElement(_Search.default, {

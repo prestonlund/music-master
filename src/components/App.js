@@ -6,7 +6,11 @@ import Tracks from "./Tracks";
 const API_ADDRESS = "https://spotify-api-wrapper.appspot.com/"
 
 class App extends Component {
-  state = { artist: null, tracks: [] };  
+  state = { artist: null, tracks: [] };
+
+  componentDidMount() {
+    this.searchArtist("arcade fire");
+  }
 
   searchArtist = artistQuery => {
     console.log("this.state", this.state);
