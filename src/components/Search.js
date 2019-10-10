@@ -25,7 +25,7 @@ class Search extends Component {
                     onKeyPress={this.handleKeyPress} 
                     placeholder="Search for an Artist" 
                 />
-                <button onClick={this.searchArtist}>Search</button>
+                <button onClick={this.searchArtist}><span>Search</span></button>
             </div>
         )
     }

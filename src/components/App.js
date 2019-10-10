@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Music Master</h2>
+        <h1>Music Master</h1>
         <Search searchArtist={this.searchArtist} />        
         <Artist artist={this.state.artist} />
         <Tracks tracks={this.state.tracks} />

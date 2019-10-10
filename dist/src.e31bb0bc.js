@@ -32069,7 +32069,7 @@ function (_Component) {
         placeholder: "Search for an Artist"
       }), _react.default.createElement("button", {
         onClick: this.searchArtist
-      }, "Search"));
+      }, _react.default.createElement("span", null, "Search")));
     }
   }]);
 
@@ -32097,7 +32097,7 @@ var Artist = function Artist(_ref) {
       name = artist.name,
       followers = artist.followers,
       genres = artist.genres;
-  return _react.default.createElement("div", null, _react.default.createElement("h3", null, name), _react.default.createElement("p", null, followers.total, " followers"), _react.default.createElement("p", null, genres.join(", ")), _react.default.createElement("img", {
+  return _react.default.createElement("div", null, _react.default.createElement("h2", null, name), _react.default.createElement("p", null, followers.total, " followers"), _react.default.createElement("p", null, genres.join(", ")), _react.default.createElement("img", {
     src: images[0] && images[0].url,
     alt: "artist profile",
     style: {
@@ -32200,6 +32200,18 @@ function (_Component) {
       };
     });
 
+    _defineProperty(_assertThisInitialized(_this), "trackIcon", function (track) {
+      if (!track.preview_url) {
+        return _react.default.createElement("span", null, "N/A");
+      }
+
+      if (_this.state.playing && _this.state.playingPreviewUrl === track.preview_url) {
+        return _react.default.createElement("span", null, "| |");
+      }
+
+      return _react.default.createElement("span", null, "\u25B6");
+    });
+
     return _this;
   }
 
@@ -32224,7 +32236,9 @@ function (_Component) {
           className: "track-image"
         }), _react.default.createElement("p", {
           className: "track-text"
-        }, name));
+        }, name), _react.default.createElement("p", {
+          className: "track-icon"
+        }, _this2.trackIcon(track)));
       }));
     }
   }]);
@@ -32339,7 +32353,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Music Master"), _react.default.createElement(_Search.default, {
+      return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Music Master"), _react.default.createElement(_Search.default, {
         searchArtist: this.searchArtist
       }), _react.default.createElement(_Artist.default, {
         artist: this.state.artist
@@ -32468,7 +32482,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64345" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53594" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
