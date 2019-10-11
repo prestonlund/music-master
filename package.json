@@ -2,10 +2,10 @@
   "name": "music-master",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "dev": "parcel public/index.html",
+    "build": "parcel build public/index.html",
     "start": "npm run build && live-server dist"
   },
   "keywords": [],
